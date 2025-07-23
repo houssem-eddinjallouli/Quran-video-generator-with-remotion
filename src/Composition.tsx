@@ -1,3 +1,3 @@
-export const MyComposition = () => {
-  return null;
-};
+import { MyQuranVideo } from './MyQuranVideo';
+
+export const MyComposition = MyQuranVideo;
