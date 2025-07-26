@@ -59,3 +59,6 @@ Note that for some entities a company license is needed. [Read the terms here](h
 chose surah from 1 to 114 then
 node src/fetch-ayat.js
 
+
+quran videos made with this app:
+[text](https://www.youtube.com/playlist?list=PLfeJYnlSUWwNBy_u5Jl7hM3Ph3GVkUbEq)
