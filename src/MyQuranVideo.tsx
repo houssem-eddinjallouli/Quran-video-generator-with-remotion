@@ -1,6 +1,7 @@
 import { AbsoluteFill, Audio, Img, Sequence, Video } from 'remotion';
 const alfatiha = require('./data/alfatiha.json');
 import backgroundVideo from './audio/13853202_1080_1920_60fps.mp4';
+import { playbackRate, selectedScean } from './Root';
 
 const bgImages = [
   require('../public/bg1.jpg'),
@@ -13,8 +14,7 @@ const bgImages = [
 ];
 export const MyQuranVideo = () => {
   let startFrame = 0;
-  const fps = 30;
-  const playbackRate = 1.3;
+
 
   return (
     <AbsoluteFill
@@ -41,7 +41,7 @@ export const MyQuranVideo = () => {
       /> */}
       {alfatiha.map((ayah,  index) => {
         const adjustedDuration = ayah.duration / playbackRate;
-        const durationInFrames = Math.ceil(adjustedDuration  * fps);
+        const durationInFrames = Math.ceil(adjustedDuration  * selectedScean.fps);
         const bgImage = bgImages[index % bgImages.length];
         const seq = (
           <Sequence key={index} from={startFrame} durationInFrames={durationInFrames}>

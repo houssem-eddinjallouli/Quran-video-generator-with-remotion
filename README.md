@@ -61,4 +61,7 @@ node src/fetch-ayat.js
 
 
 quran videos made with this app:
-[text](https://www.youtube.com/playlist?list=PLfeJYnlSUWwNBy_u5Jl7hM3Ph3GVkUbEq)
+[youtube playlist with remotion](https://www.youtube.com/playlist?list=PLfeJYnlSUWwNBy_u5Jl7hM3Ph3GVkUbEq)
+
+this one 54 min 294 Mo rendred in 2h with a 4 Cores cpu
+[youtube video with remotion](https://youtu.be/DXGTlWcecmo) 

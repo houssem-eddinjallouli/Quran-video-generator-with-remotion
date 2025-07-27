@@ -1,3 +1,4 @@
 import { MyQuranVideo } from './MyQuranVideo';
+import { QuranPages } from './QuranPages';
 
-export const MyComposition = MyQuranVideo;
+export const MyComposition = QuranPages;

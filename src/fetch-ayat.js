@@ -4,7 +4,7 @@ const path = require('path');
 const axios = require('axios');
 const { getAudioDurationInSeconds } = require('get-audio-duration');
 
-const surah = 98;
+const surah = 114;
 
 (async () => {
   const { data: meta } = await axios.get(`https://quranapi.pages.dev/api/${surah}/1.json`);
