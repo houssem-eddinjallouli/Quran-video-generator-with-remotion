@@ -15,6 +15,8 @@ const outputFile = path.join(__dirname, 'data/quran_pages.json');
       const page = pageNum.toString().padStart(3, '0');
       const imageUrl = `https://easyquran.com/wp-content/uploads/2022/10/${pageNum}-scaled.jpg`;
       const audioUrl = `https://tajweed-qr.com/voice/Qal/Osman-Al-Andari/${page}.mp3`;
+      const audioUrl1 = `https://tajweed-qr.com/voice/Warsh/Abdul-Aziz-Al-Karani/${page}.mp3`;
+      
 
       // Get audio duration
       let duration;

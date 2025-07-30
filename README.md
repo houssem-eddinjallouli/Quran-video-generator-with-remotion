@@ -1,67 +1,46 @@
-# Remotion video
+# Quran video generator
+## Made with Remotion video
 
 <p align="center">
   <a href="https://github.com/remotion-dev/logo">
-    <picture>
+    <picture width ="20%">
       <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.gif">
       <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
     </picture>
   </a>
 </p>
 
-Welcome to your Remotion project!
+Welcome to My project!
 
 ## Commands
 
 **Install Dependencies**
 
 ```console
-npm i
+npm run install-quran
 ```
 
-**Start Preview**
+**Start Application**
 
 ```console
-npm run dev
+npm run quran
 ```
 
-**Render video**
+**Render Video**
 
 ```console
-npx remotion render
+npm run render
 ```
 
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
 
 ## Docs
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+Remotion Docs [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
 
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
-
-# npm install get-audio-duration
-# node src/fetch-ayat.js
-
-chose surah from 1 to 114 then
-node src/fetch-ayat.js
-
+<hr>
 
 quran videos made with this app:
+## 9/16
 [youtube playlist with remotion](https://www.youtube.com/playlist?list=PLfeJYnlSUWwNBy_u5Jl7hM3Ph3GVkUbEq)
-
-this one 54 min 294 Mo rendred in 2h with a 4 Cores cpu
-[youtube video with remotion](https://youtu.be/DXGTlWcecmo) 
+## 16/9
+[youtube video with remotion](https://www.youtube.com/playlist?list=PLfeJYnlSUWwPPFFVnSHrTTp6UmPPAgnRw) 

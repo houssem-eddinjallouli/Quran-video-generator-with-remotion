@@ -1,24 +1,25 @@
 import { AbsoluteFill, Audio, Img, Sequence, Video } from 'remotion';
 const pages = require('./data/quran_pages.json');
-import { playbackRate, selectedScean } from './Root';
+import { DEFAULT_PLAYBACK_RATE, SelectedScean } from './config';
 
+const imgFolder = SelectedScean.width === 1080 ? 'v' : 'h';
 const bgImages = [
-  require('../public/bg1.jpg'),
-  require('../public/bg2.jpg'),
-  require('../public/bg3.jpg'),
-  require('../public/bg4.jpg'),
-  require('../public/bg5.jpg'),
-  require('../public/bg6.jpg'),
-  require('../public/bg7.jpg'),
-  require('../public/bg8.jpg'),
-  require('../public/bg9.jpg'),
-  require('../public/bg10.jpg'),
+  require(`../public/${imgFolder}/bg1.jpg`),
+  require(`../public/${imgFolder}/bg2.jpg`),
+  require(`../public/${imgFolder}/bg3.jpg`),
+  require(`../public/${imgFolder}/bg4.jpg`),  
+  require(`../public/${imgFolder}/bg5.jpg`),
+  require(`../public/${imgFolder}/bg6.jpg`),
+  require(`../public/${imgFolder}/bg7.jpg`),
+  require(`../public/${imgFolder}/bg8.jpg`),
+  require(`../public/${imgFolder}/bg9.jpg`),
+  require(`../public/${imgFolder}/bg10.jpg`),
   // Add more as needed
 ];
 const CONFIG = {
  selectedPages: { 
-    start: 3,  // First page to render
-    end: 3     // Last page to render
+    start: 1,  // First page to render
+    end: 1     // Last page to render 120
   },
   quranPageStyle: {
     width: '115%',       // Adjust based on your preference
@@ -41,8 +42,8 @@ export const QuranPages = () => {
     <AbsoluteFill style={{ backgroundColor: '#001a00' }}>
 
       {selectedPages.map((page,  index) => {
-        const adjustedDuration = page.duration / playbackRate;
-        const durationInFrames = Math.ceil(adjustedDuration  * selectedScean.fps);
+        const adjustedDuration = page.duration / DEFAULT_PLAYBACK_RATE;
+        const durationInFrames = Math.ceil(adjustedDuration  * SelectedScean.fps);
         const bgImage = bgImages[index % bgImages.length];
         const seq = (
           <Sequence key={page.pageNumber} from={startFrame} durationInFrames={durationInFrames}>

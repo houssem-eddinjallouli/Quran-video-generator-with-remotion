@@ -1,26 +1,37 @@
-import { AbsoluteFill, Audio, Img, Sequence, Video } from 'remotion';
-const alfatiha = require('./data/alfatiha.json');
-import backgroundVideo from './audio/13853202_1080_1920_60fps.mp4';
-import { playbackRate, selectedScean } from './Root';
+import { AbsoluteFill, Audio, Img, Sequence } from 'remotion';
 
+const alfatiha = require('./data/alfatiha.json');
+
+let config;
+try {
+  delete require.cache[require.resolve('./config.temp.js')];
+  config = require('./config.temp.js');
+} catch (e) {
+  config = require('./config.ts');
+}
+const { DEFAULT_PLAYBACK_RATE, SelectedScean } = config;
+
+const imgFolder = SelectedScean.width === 1080 ? 'v' : 'h';
 const bgImages = [
-  require('../public/bg1.jpg'),
-  require('../public/bg2.jpg'),
-  require('../public/bg3.jpg'),
-  require('../public/bg4.jpg'),
-  require('../public/bg5.jpg'),
-  require('../public/bg6.jpg'),
-  // Add more as needed
-];
+  require(`../public/${imgFolder}/bg1.jpg`),
+  require(`../public/${imgFolder}/bg2.jpg`),
+  require(`../public/${imgFolder}/bg3.jpg`),
+  require(`../public/${imgFolder}/bg4.jpg`),  
+  require(`../public/${imgFolder}/bg5.jpg`),
+  require(`../public/${imgFolder}/bg6.jpg`),
+  require(`../public/${imgFolder}/bg7.jpg`),
+  require(`../public/${imgFolder}/bg8.jpg`),
+  require(`../public/${imgFolder}/bg9.jpg`),
+  require(`../public/${imgFolder}/bg10.jpg`),
+  ];
+
 export const MyQuranVideo = () => {
   let startFrame = 0;
-
-
+  
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: '#00FF00', // Clean chroma green
-        fontFamily: "'Scheherazade New', Arial, sans-serif",
+        fontFamily: "'Scheherazade New', serif",
         color: 'white',
         justifyContent: 'center',
         alignItems: 'center',
@@ -29,19 +40,12 @@ export const MyQuranVideo = () => {
         textAlign: 'center',
       }}
     >
-       {/* <Video
-        loop 
-        src={backgroundVideo}
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          position: 'absolute',
-        }}
-      /> */}
+
       {alfatiha.map((ayah,  index) => {
-        const adjustedDuration = ayah.duration / playbackRate;
-        const durationInFrames = Math.ceil(adjustedDuration  * selectedScean.fps);
+        const adjustedDuration = ayah.duration / DEFAULT_PLAYBACK_RATE;
+        const durationInFrames = Math.ceil(adjustedDuration  * SelectedScean.fps);
+
+        //const bgImage = bgImages[Math.floor(Math.random() * bgImages.length)];
         const bgImage = bgImages[index % bgImages.length];
         const seq = (
           <Sequence key={index} from={startFrame} durationInFrames={durationInFrames}>
@@ -58,7 +62,7 @@ export const MyQuranVideo = () => {
             />
             <AbsoluteFill style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: 'rgba(0, 0, 0, 0.4)',}}>
 
-              <Audio src={ayah.audio} playbackRate={playbackRate} volume={1.2} />
+              <Audio src={ayah.audio} playbackRate={DEFAULT_PLAYBACK_RATE} volume={DEFAULT_PLAYBACK_RATE * 1.1} />
 
               {/* title of the sourah */}
               <div style={{
@@ -81,7 +85,13 @@ export const MyQuranVideo = () => {
 
               {/* Arabic Verse */}
               <div style={{
-                fontSize: 120,
+                fontFamily: 'Scheherazade New',
+                fontSize: ayah.arabic.length > 100 ? 100 : 140,
+                lineHeight: 1.4,
+                wordBreak: 'break-word',
+                whiteSpace: 'normal',
+                overflow: 'hidden',
+                textAlign: 'center',
                 padding: '20px',
                 margin: '20px auto',
                 maxWidth: '90%',
@@ -99,7 +109,12 @@ export const MyQuranVideo = () => {
 
               {/* English Translation */}
               <div style={{
-                fontSize: 60,
+                fontSize: ayah.english.length > 160 ? 40 : 60,
+                lineHeight: 1.4,
+                wordBreak: 'break-word',
+                whiteSpace: 'normal',
+                overflow: 'hidden',
+                textAlign: 'center',
                 padding: '20px',
                 margin: '20px auto',
                 maxWidth: '90%',
