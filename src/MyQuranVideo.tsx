@@ -16,7 +16,7 @@ const bgImages = Array.from({ length: 30 }, (_, i) =>
   require(`../public/${imgFolder}/bg${i + 1}.jpg`)
 );
 
-const bgImage = bgImages[(reciter*surah*maxDuration)%bgImages.length];
+const bgImage = bgImages[ Math.ceil((reciter*10+surah*3+maxDuration)%bgImages.length)];
   
 export const MyQuranVideo = () => {
   let startFrame = 0;

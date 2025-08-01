@@ -48,7 +48,33 @@ npm run render
 
 <hr>
 
-quran videos made with this app:
+## turn on only the API with
+
+```console
+npm run api
+```
+
+do a POST at :
+
+```console
+http://localhost:3911/generate
+```
+
+and put this in the body
+
+```console
+{
+  "scene": "normal",
+  "playbackRate": 1,
+  "surah": 114,
+  "maxDuration": 888,
+  "reciter": 1
+}
+```
+
+<hr>
+
+# quran videos made with this app:
 
 ## 9/16
 
