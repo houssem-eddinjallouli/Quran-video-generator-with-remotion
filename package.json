@@ -40,7 +40,8 @@
     "api": "ts-node src/api.ts",
     "client": "cd client && npm start",
     "quran": "start cmd /k \"npm run api\" && start cmd /k \"npm run client\"",
-    "install-quran": "npm install && cd client && npm install"
+    "install-quran": "npm install && cd client && npm install",
+    "run-quran": "npm run install-quran && npm run quran"
   },
   "sideEffects": [
     "*.css"

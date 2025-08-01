@@ -1,30 +1,16 @@
 [
   {
-    "arabic": "الٓمٓ",
-    "english": "Alif-Lãm-Mĩm.",
-    "audio": "https://the-quran-project.github.io/Quran-Audio/Data/1/2_1.mp3",
-    "duration": 7.653878,
-    "name": "سورة البقرة"
+    "arabic": "الٓر ۚ تِلْكَ ءَايَـٰتُ ٱلْكِتَـٰبِ ٱلْمُبِينِ",
+    "english": "Alif-Lãm-Ra. These are the verses of the clear Book.",
+    "audio": "https://the-quran-project.github.io/Quran-Audio/Data/1/12_1.mp3",
+    "duration": 11.650612,
+    "name": "سورة يوسف"
   },
   {
-    "arabic": "ذَٰلِكَ ٱلْكِتَـٰبُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ",
-    "english": "This is the Book! There is no doubt about it—a guide for those mindful ˹of Allah˺",
-    "audio": "https://the-quran-project.github.io/Quran-Audio/Data/1/2_2.mp3",
-    "duration": 8.986122,
-    "name": "سورة البقرة"
-  },
-  {
-    "arabic": "ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَـٰهُمْ يُنفِقُونَ",
-    "english": "who believe in the unseen, establish prayer, and donate from what We have provided for them",
-    "audio": "https://the-quran-project.github.io/Quran-Audio/Data/1/2_3.mp3",
-    "duration": 11.41551,
-    "name": "سورة البقرة"
-  },
-  {
-    "arabic": "وَٱلَّذِينَ يُؤْمِنُونَ بِمَآ أُنزِلَ إِلَيْكَ وَمَآ أُنزِلَ مِن قَبْلِكَ وَبِٱلْـَٔاخِرَةِ هُمْ يُوقِنُونَ",
-    "english": "and who believe in what has been revealed to you ˹O Prophet˺ and what was revealed before you, and have sure faith in the Hereafter.",
-    "audio": "https://the-quran-project.github.io/Quran-Audio/Data/1/2_4.mp3",
-    "duration": 15.830204,
-    "name": "سورة البقرة"
+    "arabic": "إِنَّآ أَنزَلْنَـٰهُ قُرْءَٰنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ",
+    "english": "Indeed, We have sent it down as an Arabic Quran so that you may understand.",
+    "audio": "https://the-quran-project.github.io/Quran-Audio/Data/1/12_2.mp3",
+    "duration": 14.027755,
+    "name": "سورة يوسف"
   }
 ]
