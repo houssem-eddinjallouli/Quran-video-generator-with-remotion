@@ -32,10 +32,10 @@ export const RemotionRoot: React.FC = () => {
     const totalFrames = Math.ceil(totalDuration * SelectedScean.fps);
 
     //1:Mishary Rashid Al Afasy  
-//2:Abu Bakr Al Shatri
-//3:Nasser Al Qatami
-//4:Yasser Al Dosari
-//5:Hani Ar Rifai
+    //2:Abu Bakr Al Shatri
+    //3:Nasser Al Qatami
+    //4:Yasser Al Dosari
+    //5:Hani Ar Rifai
     const reciterNames = [
         'Mishary-Rashid-Al-Afasy',
         'Abu-Bakr-Al-Shatri',
@@ -43,8 +43,8 @@ export const RemotionRoot: React.FC = () => {
         'Yasser-Al-Dosari',
         'Hani-Ar-Rifai',
     ];
-
-    const fileName = `surah-${surah}-${reciterNames[reciter -1]}`
+    const videotype = SelectedScean.width === 1080 ? 'short' : 'video';
+    const fileName = `surah-${surah}-${reciterNames[reciter -1]}-${videotype}`
   return (
     <>
       <Composition

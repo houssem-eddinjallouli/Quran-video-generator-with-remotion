@@ -8,6 +8,7 @@
   "dependencies": {
     "@remotion/cli": "4.0.325",
     "@remotion/tailwind-v4": "4.0.325",
+    "@remotion/transitions": "4.0.330",
     "@types/express": "^5.0.3",
     "@types/react-dom": "^19.1.7",
     "axios": "^1.11.0",

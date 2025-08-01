@@ -12,7 +12,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="React logo" />
 
-        <h1 style={{ marginTop: '20px' }}>🎥 Quran Video Generator</h1>
+        <h1 style={{ marginTop: '10px' }}>🎥 Quran Video Generator</h1>
         
         <div className="link-bar">
           <a

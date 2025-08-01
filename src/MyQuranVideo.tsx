@@ -9,22 +9,15 @@ try {
 } catch (e) {
   config = require('./config.ts');
 }
-const { DEFAULT_PLAYBACK_RATE, SelectedScean } = config;
+const { DEFAULT_PLAYBACK_RATE, SelectedScean, reciter, surah, maxDuration} = config;
 
 const imgFolder = SelectedScean.width === 1080 ? 'v' : 'h';
-const bgImages = [
-  require(`../public/${imgFolder}/bg1.jpg`),
-  require(`../public/${imgFolder}/bg2.jpg`),
-  require(`../public/${imgFolder}/bg3.jpg`),
-  require(`../public/${imgFolder}/bg4.jpg`),  
-  require(`../public/${imgFolder}/bg5.jpg`),
-  require(`../public/${imgFolder}/bg6.jpg`),
-  require(`../public/${imgFolder}/bg7.jpg`),
-  require(`../public/${imgFolder}/bg8.jpg`),
-  require(`../public/${imgFolder}/bg9.jpg`),
-  require(`../public/${imgFolder}/bg10.jpg`),
-  ];
+const bgImages = Array.from({ length: 30 }, (_, i) => 
+  require(`../public/${imgFolder}/bg${i + 1}.jpg`)
+);
 
+const bgImage = bgImages[(reciter*surah*maxDuration)%bgImages.length];
+  
 export const MyQuranVideo = () => {
   let startFrame = 0;
   
@@ -44,9 +37,8 @@ export const MyQuranVideo = () => {
       {alfatiha.map((ayah,  index) => {
         const adjustedDuration = ayah.duration / DEFAULT_PLAYBACK_RATE;
         const durationInFrames = Math.ceil(adjustedDuration  * SelectedScean.fps);
-
         //const bgImage = bgImages[Math.floor(Math.random() * bgImages.length)];
-        const bgImage = bgImages[index % bgImages.length];
+        //const bgImage = bgImages[index % bgImages.length];
         const seq = (
           <Sequence key={index} from={startFrame} durationInFrames={durationInFrames}>
 
@@ -57,7 +49,8 @@ export const MyQuranVideo = () => {
                 height: '110%',
                 objectFit: 'cover',
                 position: 'absolute',
-                transform: `scale(${1 + index*0.01})`,
+                filter: 'blur(1px) brightness(1.2)',
+                transform: `scale(${1 + (index * 0.005)})`
               }}
             />
             <AbsoluteFill style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: 'rgba(0, 0, 0, 0.4)',}}>
@@ -74,8 +67,8 @@ export const MyQuranVideo = () => {
                 zIndex: 100,
                 fontSize: '70px',
                 padding: '15px',
-                backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                borderRadius: '0 0 10px 10px',
+                backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                borderRadius: '0 0 5px 5px',
                 textShadow: '2px 2px 4px #000',
                 margin: '0 auto',
                 width: 'fit-content',
@@ -86,7 +79,7 @@ export const MyQuranVideo = () => {
               {/* Arabic Verse */}
               <div style={{
                 fontFamily: 'Scheherazade New',
-                fontSize: ayah.arabic.length > 100 ? 100 : 140,
+                fontSize: ayah.arabic.length > 100 ? 70 : 120,
                 lineHeight: 1.4,
                 wordBreak: 'break-word',
                 whiteSpace: 'normal',
@@ -109,7 +102,7 @@ export const MyQuranVideo = () => {
 
               {/* English Translation */}
               <div style={{
-                fontSize: ayah.english.length > 160 ? 40 : 60,
+                fontSize: ayah.english.length > 150 ? 40 : 50,
                 lineHeight: 1.4,
                 wordBreak: 'break-word',
                 whiteSpace: 'normal',
