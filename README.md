@@ -15,10 +15,12 @@
 ## Documentation | التوثيق
 
 **English:**
+
 - Remotion Docs [fundamentals page](https://www.remotion.dev/docs/the-fundamentals)
 - QuranAPI Docs [fundamentals page](https://quranapi.pages.dev)
 
 **العربية:**
+
 - وثائق Remotion [الصفحة الأساسية](https://www.remotion.dev/docs/the-fundamentals)
 - وثائق QuranAPI [الصفحة الأساسية](https://quranapi.pages.dev)
 
@@ -36,10 +38,12 @@
 ## How to use | طريقة الاستخدام
 
 **English:**
+
 1. Just run the Quran-video-generator.exe
 2. Or use the commands below
 
 **العربية:**
+
 1. قم بتشغيل ملف Quran-video-generator.exe
 2. أو استخدم الأوامر التالية
 
@@ -48,16 +52,19 @@
 ## Commands | الأوامر
 
 **Install Dependencies | تثبيت المتطلبات**
+
 ```console
 npm run install-quran
 ```
 
 **Start Application | تشغيل التطبيق**
+
 ```console
 npm run quran
 ```
 
 **Render Video from config.ts | تصيير الفيديو من config.ts**
+
 ```console
 npm run render
 ```
@@ -67,16 +74,19 @@ npm run render
 ## API Usage | استخدام API
 
 **Turn on only the API with | تشغيل واجهة API فقط باستخدام:**
+
 ```console
 npm run api
 ```
 
 **Do a POST request at | قم بطلب POST على:**
+
 ```console
 http://localhost:3911/generate
 ```
 
 **Request body | جسم الطلب:**
+
 ```json
 {
   "scene": "normal",
@@ -92,17 +102,19 @@ http://localhost:3911/generate
 ## Quran Videos Made With This App | فيديوهات قرآنية مصنوعة بهذا التطبيق
 
 ### 9:16 Aspect Ratio | نسبة 9:16
+
 [YouTube playlist with Remotion | قائمة تشغيل يوتيوب بـ Remotion](https://www.youtube.com/playlist?list=PLfeJYnlSUWwNBy_u5Jl7hM3Ph3GVkUbEq)
 
 ### 16:9 Aspect Ratio | نسبة 16:9
+
 [YouTube video with Remotion | فيديو يوتيوب بـ Remotion](https://www.youtube.com/playlist?list=PLfeJYnlSUWwPPFFVnSHrTTp6UmPPAgnRw)
 
 ---
 
 ## Contributing | المساهمة
+
 **English:**  
 Feel free to open issues or pull requests to improve this project!
 
 **العربية:**  
 لا تتردد في فتح مشكلات أو طلبات سحب لتحسين هذا المشروع!
-```
