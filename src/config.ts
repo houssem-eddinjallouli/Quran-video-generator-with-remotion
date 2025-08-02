@@ -11,8 +11,10 @@ export const SCENE_CONFIG = {
   },
 };
 export const SelectedScean = SCENE_CONFIG.normal;
-export const DEFAULT_PLAYBACK_RATE = 1;
-export const surah = 57; // 1 to 114
+export const DEFAULT_PLAYBACK_RATE = 1.1;
+export const surah = 2; // 1 to 114
+export const firstAyah = 1; // 1 to 286
+export const lastAyah = 268; // 1 to 286
 export const maxDuration = 888; // seconds
 export const reciter = 1; // 1 to 5
 //1:Mishary Rashid Al Afasy

@@ -17,7 +17,9 @@ app.post('/generate', async (req, res) => {
       scene = 'short',
       playbackRate = 1,
       surah = 1,
-      maxDuration = 30,
+      firstAyah = 1,
+      lastAyah = 286,
+      maxDuration = 888,
       reciter = 1
     } = req.body;
 
@@ -33,6 +35,9 @@ app.post('/generate', async (req, res) => {
     }
     if (reciter < 1 || reciter > 5) {
       return res.status(400).json({ error: 'Reciter must be between 1 and 5 \n1:Mishary Rashid Al Afasy \n2:Abu Bakr Al Shatri \n3:Nasser Al Qatami \n4:Yasser Al Dosari \n5:Hani Ar Rifai' });
+    }
+    if (firstAyah < 1 || firstAyah > 286 || lastAyah < 1 || lastAyah > 286 || firstAyah > lastAyah) {
+      return res.status(400).json({ error: 'Invalid Ayah range' });
     }
 
     // Create a temporary config file
@@ -52,6 +57,8 @@ export const SCENE_CONFIG = {
 export const SelectedScean = SCENE_CONFIG.${scene};
 export const DEFAULT_PLAYBACK_RATE = ${playbackRate};
 export const surah = ${surah};
+export const firstAyah = ${firstAyah};
+export const lastAyah = ${lastAyah};
 export const maxDuration = ${maxDuration};
 export const reciter = ${reciter};
 `;

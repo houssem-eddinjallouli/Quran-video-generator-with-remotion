@@ -1,9 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./VideoList.css"; // <- Include this line if you separate styles
+import "./VideoList.css";
 
-const VideoList = () => {
+const VideoList = ({ language }: { language: string }) => {
   const [videos, setVideos] = useState<string[]>([]);
+
+  const translations = {
+    en: {
+      title: "📂 Generated Videos",
+      noVideos: "No videos yet.",
+      download: "⬇️ Download"
+    },
+    ar: {
+      title: "📂 الفيديوهات المولدة",
+      noVideos: "لا توجد فيديوهات بعد.",
+      download: "⬇️ تنزيل"
+    }
+  };
+
+  const t = translations[language as keyof typeof translations];
 
   const fetchVideos = async () => {
     try {
@@ -19,10 +34,10 @@ const VideoList = () => {
   }, []);
 
   return (
-    <div className="video-list-container">
-      <h2>📂 Generated Videos</h2>
+    <div className="video-list-container" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+      <h2>{t.title}</h2>
       {videos.length === 0 ? (
-        <p className="no-videos">No videos yet.</p>
+        <p className="no-videos">{t.noVideos}</p>
       ) : (
         <div className="video-grid">
           {videos.map((vid, idx) => (
@@ -37,7 +52,7 @@ const VideoList = () => {
                 href={`http://localhost:3911/out/${vid}`}
                 download
               >
-                ⬇️ Download
+                {t.download}
               </a>
             </div>
           ))}

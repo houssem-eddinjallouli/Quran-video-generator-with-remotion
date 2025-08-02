@@ -11,7 +11,7 @@ try {
 } catch (e) {
   config = require('./config.ts');
 }
-const { DEFAULT_PLAYBACK_RATE, SelectedScean, surah, reciter} = config;
+const { DEFAULT_PLAYBACK_RATE, SelectedScean, surah, reciter, firstAyah, lastAyah} = config;
 
 // const pages = require('./data/quran_pages.json');
 
@@ -44,7 +44,7 @@ export const RemotionRoot: React.FC = () => {
         'Hani-Ar-Rifai',
     ];
     const videotype = SelectedScean.width === 1080 ? 'short' : 'video';
-    const fileName = `surah-${surah}-${reciterNames[reciter -1]}-${videotype}`
+    const fileName = `surah-${surah}-${reciterNames[reciter -1]}-${videotype}-${firstAyah}-${lastAyah}`
   return (
     <>
       <Composition

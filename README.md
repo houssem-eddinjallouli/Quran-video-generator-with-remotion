@@ -1,6 +1,6 @@
-# Quran video generator
+# Quran Video Generator | مولد فيديو القرآن الكريم
 
-## Made with Remotion video and quranapi
+## Made with Remotion video and quranapi | مصنوع بـ Remotion و QuranAPI
 
 <p align="center">
   <a href="https://github.com/remotion-dev/logo">
@@ -12,57 +12,72 @@
   </a>
 </p>
 
-## Docs
+## Documentation | التوثيق
 
-Remotion Docs [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-quranapi Docs [fundamentals page](https://quranapi.pages.dev).
+**English:**
+- Remotion Docs [fundamentals page](https://www.remotion.dev/docs/the-fundamentals)
+- QuranAPI Docs [fundamentals page](https://quranapi.pages.dev)
 
-<h2>Welcome to My project!</h2>
+**العربية:**
+- وثائق Remotion [الصفحة الأساسية](https://www.remotion.dev/docs/the-fundamentals)
+- وثائق QuranAPI [الصفحة الأساسية](https://quranapi.pages.dev)
 
-# Demo
+---
+
+## Demo | عرض توضيحي
 
 <p align="center">
-  <img src="demo1.jpg" alt="Final Result" width="700"/>
-  <img src="demo2.jpg" alt="Final Result" width="700"/>
+  <img src="demo1.jpg" alt="Final Result | النتيجة النهائية" width="700"/>
+  <img src="demo2.jpg" alt="Final Result | النتيجة النهائية" width="700"/>
 </p>
 
-## Commands
+---
 
-**Install Dependencies**
+## How to use | طريقة الاستخدام
 
+**English:**
+1. Just run the Quran-video-generator.exe
+2. Or use the commands below
+
+**العربية:**
+1. قم بتشغيل ملف Quran-video-generator.exe
+2. أو استخدم الأوامر التالية
+
+---
+
+## Commands | الأوامر
+
+**Install Dependencies | تثبيت المتطلبات**
 ```console
 npm run install-quran
 ```
 
-**Start Application**
-
+**Start Application | تشغيل التطبيق**
 ```console
 npm run quran
 ```
 
-**Render Video from config.ts**
-
+**Render Video from config.ts | تصيير الفيديو من config.ts**
 ```console
 npm run render
 ```
 
-<hr>
+---
 
-## turn on only the API with
+## API Usage | استخدام API
 
+**Turn on only the API with | تشغيل واجهة API فقط باستخدام:**
 ```console
 npm run api
 ```
 
-do a POST at :
-
+**Do a POST request at | قم بطلب POST على:**
 ```console
 http://localhost:3911/generate
 ```
 
-and put this in the body
-
-```console
+**Request body | جسم الطلب:**
+```json
 {
   "scene": "normal",
   "playbackRate": 1,
@@ -72,14 +87,22 @@ and put this in the body
 }
 ```
 
-<hr>
+---
 
-# quran videos made with this app:
+## Quran Videos Made With This App | فيديوهات قرآنية مصنوعة بهذا التطبيق
 
-## 9/16
+### 9:16 Aspect Ratio | نسبة 9:16
+[YouTube playlist with Remotion | قائمة تشغيل يوتيوب بـ Remotion](https://www.youtube.com/playlist?list=PLfeJYnlSUWwNBy_u5Jl7hM3Ph3GVkUbEq)
 
-[youtube playlist with remotion](https://www.youtube.com/playlist?list=PLfeJYnlSUWwNBy_u5Jl7hM3Ph3GVkUbEq)
+### 16:9 Aspect Ratio | نسبة 16:9
+[YouTube video with Remotion | فيديو يوتيوب بـ Remotion](https://www.youtube.com/playlist?list=PLfeJYnlSUWwPPFFVnSHrTTp6UmPPAgnRw)
 
-## 16/9
+---
 
-[youtube video with remotion](https://www.youtube.com/playlist?list=PLfeJYnlSUWwPPFFVnSHrTTp6UmPPAgnRw)
+## Contributing | المساهمة
+**English:**  
+Feel free to open issues or pull requests to improve this project!
+
+**العربية:**  
+لا تتردد في فتح مشكلات أو طلبات سحب لتحسين هذا المشروع!
+```
