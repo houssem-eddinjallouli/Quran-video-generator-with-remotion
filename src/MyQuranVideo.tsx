@@ -9,7 +9,7 @@ try {
 } catch (e) {
   config = require('./config.ts');
 }
-const { DEFAULT_PLAYBACK_RATE, SelectedScean, reciter, surah, maxDuration} = config;
+const { DEFAULT_PLAYBACK_RATE, SelectedScean, reciter, surah, maxDuration, firstAyah} = config;
 
 const imgFolder = SelectedScean.width === 1080 ? 'v' : 'h';
 const bgImages = Array.from({ length: 30 }, (_, i) => 
@@ -95,7 +95,7 @@ export const MyQuranVideo = () => {
                 {ayah.arabic} 
                 
                   <span style={{ fontSize: 80, marginLeft: '20px' }}>
-                     ({index+1})
+                     ({index+firstAyah})
                   </span>
                 
               </div>
