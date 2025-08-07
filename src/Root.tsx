@@ -50,7 +50,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id={fileName}
         component={MyComposition}
-        durationInFrames={totalFrames}
+        durationInFrames={totalFrames+SelectedScean.fps+1}
         fps={SelectedScean.fps}
         width={SelectedScean.width}
         height={SelectedScean.height}
